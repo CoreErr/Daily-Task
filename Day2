@@ -1,0 +1,65 @@
+#Write a program to accept a no from user and if no is positive then find out the square
+
+number1= int(input("Enter a number"))
+
+if number1>0 :
+
+    result=number1*number1
+    print("Square is =",result)
+
+----------------------------------------------------------------
+
+#Write a program to accept 2 numbers from the user and find out which one is greater
+
+number1=int(input("Enter first number"))
+number2=int(input("Enter second number"))
+
+if number1>number2 :
+
+    print("NUmber 1 is graeter =",number1)
+
+else :
+
+    print("Number 2 is graeter=",number2)
+
+-------------------------------------------------------------------
+
+#WAP to accept selling price and cost price from the user and check for the profit or loss.
+
+cost_price=int(input("Enter Cost price : "))
+sell_price=int(input("Enter Selling price : "))
+
+result=sell_price - cost_price
+
+if result==0 :
+    print("Neither profit Nor loss=",result)
+
+elif result>0 :
+    print("Profit=",result)
+
+else:
+    print("Loss=", -result)
+---------------------------------------------------------------------------  
+
+
+
+"""
+above 60
+	m:8%
+	f: 8.5%
+
+below 60
+
+m,f=7%
+"""
+
+age=int(input("Enter your age : "))
+gender= input("Enter your gender : ")
+
+if age >=60 :
+    if gender == 'M' or gender=='m' :
+        print("ROI = 8% ")
+    else :
+        print("ROI = 8.5%")
+else:
+    print("ROI = 7%")
