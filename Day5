@@ -1,0 +1,41 @@
+def get_user_choice(message, options):
+    print(message)
+    for i, option in enumerate(options):
+        print(f"{i}: {option}")
+    while True:
+        try:
+            choice = int(input("Select option: "))
+            if 0 <= choice < len(options):
+                return choice
+            print("Invalid choice. Try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+def main():
+    print("Welcome to 7_Good Resturant")
+
+    starter_menu = [("Water", 0), ("Chinese Bhel", 10), ("Papad with Veggies", 40)]
+    starter = get_user_choice("\nWhat starter would you like:", [item[0] for item in starter_menu])
+    starter_price = starter_menu[starter][1]
+
+    main_course_menu = [("Chicken Course", 200), ("Mutton Course", 250), ("Veg Course", 190)]
+    main_course = get_user_choice("\nWhat Main course would you like:", [item[0] for item in main_course_menu])
+    main_course_price = main_course_menu[main_course][1]
+
+    dessert_menu = [("Faluda", 30), ("Cold Drink", 20), ("Ice Cream Cone", 40)]
+    dessert = get_user_choice("\nWhat desserts would you like:", [item[0] for item in dessert_menu])
+    dessert_price = dessert_menu[dessert][1]
+
+    total_bill = starter_price + main_course_price + dessert_price
+
+    print("\nHere are your ordered items: ")
+    print("------------------")
+    print("Your Bill: ")
+    print(f"{starter_menu[starter][0]} - {starter_price}")
+    print(f"{main_course_menu[main_course][0]} - {main_course_price}")
+    print(f"{dessert_menu[dessert][0]} - {dessert_price}")
+    print(f"\nTotal Bill: {total_bill}")
+    print("------------------")
+
+if __name__ == "__main__":
+    main()
